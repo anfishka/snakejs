@@ -68,9 +68,35 @@ function direction(event)
 }
 
 let txt = document.getElementById("txt");
+let body = document.getElementById("main");
+let image = document.createElement('img');
+ 
+image.src = "";
+document.body.appendChild(image);
 
 function drawGame()
 {
+    if (score == 0)
+    {
+        txt.innerHTML = "ПРОЙДИ ТАКОЕ КОЛИЧЕСТВО УРОВНЕЙ, СКОЛЬКО ТЕБЕ ИСПОЛНИЛОСЬ ЛЕТ И УЗНАЕШЬ, ГДЕ НАХОДИТЬСЯ ПОДАРОК !!! Лайфхак: змейка сама себя не ест иии когда ударишься об границу поля, игра заканчивается и нужно обновить страницу, поэтому лучше собирать еду с запасом в 1 клеточку до границы";
+    }
+    if (score > 0 && score < 20)
+    {
+        txt.innerHTML = "Your level: " + score;
+    }
+    if (score == 20)
+    {  
+    body.innerHTML = '';
+    let h1 = [0x0441, 0x438, 0x43D, 0x435, 0x43C];
+    let h2 = [ 0x447, 0x435, 0x43C, 0x43E, 0x434, 0x430, 0x43D, 0x435];
+    let hint1 = h1.map(code => String.fromCharCode(code)).join('');
+    let hint2 = h2.map(code => String.fromCharCode(code)).join('');
+
+    body.innerHTML = 'Маладессс! Твой подарок в ' + hint1 + " " + hint2;
+    image.src = "../img/congra.jpg";
+    }
+    
+
     ctx.drawImage(ground, 0, 0);
     ctx.drawImage(foodImg, food1.x, food1.y);
     ctx.drawImage(foodImg, food2.x, food2.y);
@@ -133,18 +159,9 @@ function drawGame()
     };
     snake.unshift(newHead);
 
-    txt.innerHTML = "Your level: " + score;
 }
 
-let game = setInterval(drawGame, 500);
-
-let congratulationImg = "img/congrat.jpg"
-
-if (score == 20)
-{   txt.innerHTML = 'Maladec tvoi podarok v ...';
-    canvas.innerHTML = drawImage(congratulationImg, 200);
-}
-
+let game = setInterval(drawGame, 600);
 
 
 

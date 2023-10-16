@@ -1,3 +1,18 @@
+body{
+   background: #6f3965;
+   margin: 50px auto;
+}
+
+#main{
+    margin: 20px auto;
+    background: #871281;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: antiquewhite;
+    font-weight: bold;
+    font-size: 32px;  
+}
+
 canvas{
     display: block;
     margin: 0 auto;
