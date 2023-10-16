@@ -133,11 +133,17 @@ function drawGame()
     };
     snake.unshift(newHead);
 
-    txt.innerHTML = score;
+    txt.innerHTML = "Your level: " + score;
 }
 
 let game = setInterval(drawGame, 500);
 
+let congratulationImg = "img/congrat.jpg"
+
+if (score == 20)
+{   txt.innerHTML = 'Maladec tvoi podarok v ...';
+    canvas.innerHTML = drawImage(congratulationImg, 200);
+}
 
 
 
