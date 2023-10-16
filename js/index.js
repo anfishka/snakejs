@@ -7,6 +7,18 @@ ground.src = "img/ground.png";
 const foodImg = new Image();
 foodImg.src = "img/donut.png";
 
+const foodImg2 = new Image();
+foodImg2.src = "img/cola.png";
+
+const foodImg3 = new Image();
+foodImg3.src = "img/coffee.png";
+
+const foodImg4 = new Image();
+foodImg4.src = "img/hamburger.png";
+
+const foodImg5 = new Image();
+foodImg5.src = "img/sushi.png";
+
 let box = 64;
 
 let score = 0;
@@ -78,7 +90,7 @@ function drawGame()
 {
     if (score == 0)
     {
-        txt.innerHTML = "ПРОЙДИ ТАКОЕ КОЛИЧЕСТВО УРОВНЕЙ, СКОЛЬКО ТЕБЕ ИСПОЛНИЛОСЬ ЛЕТ И УЗНАЕШЬ, ГДЕ НАХОДИТЬСЯ ПОДАРОК !!! Лайфхак: змейка сама себя не ест иии когда ударишься об границу поля, игра заканчивается и нужно обновить страницу, поэтому лучше собирать еду с запасом в 1 клеточку до границы";
+        txt.innerHTML = "ПРОЙДИ ТАКОЕ КОЛИЧЕСТВО УРОВНЕЙ, СКОЛЬКО ТЕБЕ ИСПОЛНИЛОСЬ ЛЕТ И УЗНАЕШЬ, ГДЕ НАХОДИТЬСЯ ПОДАРОК !!! Лайфхак: змейка сама себя не ест иии когда ударишься об границу поля, игра заканчивается и нужно обновить страницу, поэтому лучше собирать еду с запасом в 1 клеточку до границы + для управления змейкой использовать клавишы  W A S D";
     }
     if (score > 0 && score < 20)
     {
@@ -99,10 +111,10 @@ function drawGame()
 
     ctx.drawImage(ground, 0, 0);
     ctx.drawImage(foodImg, food1.x, food1.y);
-    ctx.drawImage(foodImg, food2.x, food2.y);
-    ctx.drawImage(foodImg, food3.x, food3.y);
-    ctx.drawImage(foodImg, food4.x, food4.y);
-    ctx.drawImage(foodImg, food5.x, food5.y);
+    ctx.drawImage(foodImg2, food2.x, food2.y);
+    ctx.drawImage(foodImg3, food3.x, food3.y);
+    ctx.drawImage(foodImg4, food4.x, food4.y);
+    ctx.drawImage(foodImg5, food5.x, food5.y);
 
     for(let i = 0; i < snake.length; i++)
     {
